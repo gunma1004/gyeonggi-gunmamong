@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  
+  <!-- 🎯 메인 타이틀: 출장마사지 키워드 최적화 -->
+  <title>경기건마몽 - 경기 출장마사지 31개 시군 구/동별 상세 안내</title>
+  <meta content="경기건마몽 경기 출장마사지 전지역 안내. 수원, 성남, 고양, 용인 등 31개 시군 구/동별 출장마사지 추천 제휴업체 정보 및 후불 상담." name="description"/>
+  
+  <!-- 🎯 파비콘(Favicon) 설정 -->
+  <link rel="icon" href="images/logo.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="images/logo.png"/>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Header & Navigation -->
+    <header class="site-header">
+      <a aria-label="경기건마몽 홈" class="brand" href="#">
+        <span class="brand-text"><strong>경기건마몽</strong><em>GUNMA MONG</em></span>
+      </a>
+      <nav class="nav-menu">
+        <a href="#shops" onclick="showMainPage()">추천업체</a>
+        <a href="#service" onclick="showMainPage()">서비스</a>
+        <a href="#price-info" onclick="showMainPage()">가격안내</a>
+        <a href="#travel" onclick="showMainPage()">근처여행</a>
+        <a href="#food" onclick="showMainPage()">맛집숙소</a>
+        <a href="#areas" onclick="showMainPage()">지역안내</a>
+        <a href="#reviews" onclick="showMainPage()">후기</a>
+      </nav>
+    </header>
+
+    <!-- [A] 메인 홈 화면 영역 -->
+    <div id="mainView">
+      <main class="area-hub-page">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+          <div class="hero-inner">
+            <span class="eyebrow">GYEONGGI PREMIUM</span>
+            <h1>경기건마몽 출장마사지 &amp; 힐링가이드</h1>
+            <p>경기 전지역 검증된 추천 출장마사지 제휴업체부터 구/동별 상세 케어 정보까지 한눈에 확인하세요.</p>
+          </div>
+        </section>
+
+        <!-- 1. 최상단 배치: 추천 제휴업체 -->
+        <section class="shop-section" id="shops">
+          <div class="section-head">
+            <span>RECOMMENDED SHOPS</span>
+            <h2>🔥 BEST 추천 제휴업체</h2>
+            <p>경기지역 엄선된 베스트 프리미엄 출장마사지 업체를 우선 안내합니다.</p>
+          </div>
+          <div class="shop-grid" id="shopGridContainer"></div>
+        </section>
+
+        <!-- 2. 서비스 안내 -->
+        <section class="info-section" id="service">
+          <div class="section-head">
+            <span>SERVICE GUIDE</span>
+            <h2>프리미엄 서비스 안내</h2>
+            <p>경기 전지역 어디서나 편안하게 이용하실 수 있는 후불제 안심 출장마사지 케어 서비스입니다.</p>
+          </div>
+          <div class="card-grid">
+            <div class="info-card">
+              <h3>100% 후불제 안심 서비스</h3>
+              <p>선입금 요구가 전혀 없는 후불 결제로 안전하게 출장마사지 서비스를 이용하실 수 있습니다.</p>
+            </div>
+            <div class="info-card">
+              <h3>신속한 30분 방문 케어</h3>
+              <p>해당 지역 최단 거리 관리사를 통한 빠른 방문 배차 시스템을 운영합니다.</p>
+            </div>
+            <div class="info-card">
+              <h3>전문 케어 프로그램</h3>
+              <p>타이, 아로마, 스웨디시 등 철저한 위생과 체계적인 수기 전문 관리를 제공합니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. 서비스 가격안내 -->
+        <section class="info-section" id="price-info">
+          <div class="section-head">
+            <span>PRICING GUIDE</span>
+            <h2>서비스 가격안내</h2>
+            <p>표준 코스별 이용 요금 가이드입니다. (업체별 세부 금액은 다를 수 있습니다)</p>
+          </div>
+          <div class="price-table">
+            <div class="price-row">
+              <div class="row-name">타이 / 건식 케어<small>60분 / 90분 코스</small></div>
+              <div class="row-amount">60,000원 ~</div>
+            </div>
+            <div class="price-row price-row--best">
+              <span class="row-badge">POPULAR</span>
+              <div class="row-name">아로마 / 스웨디시 케어<small>60분 / 90분 맞춤 케어</small></div>
+              <div class="row-amount">90,000원 ~</div>
+            </div>
+            <div class="price-row">
+              <div class="row-name">VIP 프리미엄 코스<small>120분 전신 스페셜 힐링</small></div>
+              <div class="row-amount">140,000원 ~</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 근처여행 (경기 근처 대표 명소) -->
+        <section class="info-section" id="travel">
+          <div class="section-head">
+            <span>GYEONGGI TRAVEL GUIDE</span>
+            <h2>경기 근처여행 추천</h2>
+            <p>경기도 및 인근 권역에서 즐기기 좋은 힐링 명소 가이드</p>
+          </div>
+          <div class="card-grid">
+            <div class="info-card">
+              <h3>수원 화성 행궁 &amp; 성곽길</h3>
+              <p>유네스코 세계문화유산 수원화성의 유서 깊은 성곽과 고풍스러운 행궁산책로</p>
+            </div>
+            <div class="info-card">
+              <h3>가평 자라섬 &amp; 남이섬</h3>
+              <p>탁 트인 자연 속에서 캠핑과 드라이브를 감상할 수 있는 대표 힐링 스팟</p>
+            </div>
+            <div class="info-card">
+              <h3>파주 헤이리 예술마을</h3>
+              <p>다양한 박물관과 미술관, 이색 감성 카페가 가득한 문화예술 공간</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. 맛집숙소 -->
+        <section class="info-section" id="food">
+          <div class="section-head">
+            <span>LOCAL FOOD &amp; STAY</span>
+            <h2>경기 맛집숙소 추천</h2>
+            <p>지역별 꼭 방문해봐야 할 로컬 미식과 최고급 호캉스 및 숙소</p>
+          </div>
+          <div class="card-grid">
+            <div class="info-card">
+              <h3>수원 왕갈비 &amp; 포천 이동갈비</h3>
+              <p>경기 지역을 대표하는 미식 명가 전통 갈비 브랜드 구역 탐방</p>
+            </div>
+            <div class="info-card">
+              <h3>프리미엄 비즈니스 &amp; 부티크 호텔</h3>
+              <p>수원, 성남, 판교 중심가의 접근성 뛰어난 호캉스 및 숙박 추천지</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. 지역안내 (31개 시군) -->
+        <section class="area-section" id="areas">
+          <div class="section-head">
+            <span>AREA GUIDE</span>
+            <h2>경기 출장마사지 지역안내 (31개 시군)</h2>
+            <p>원하시는 시/군을 선택하면 구/동별 세부 단독 출장마사지 안내 페이지로 이동합니다.</p>
+          </div>
+          <div class="area-grid" id="areaGridContainer"></div>
+        </section>
+
+        <!-- 7. 후기 -->
+        <section class="info-section" id="reviews">
+          <div class="section-head">
+            <span>USER REVIEWS</span>
+            <h2>이용자 생생후기</h2>
+            <p>실제 경기건마몽 출장마사지 이용 고객님들의 리얼 후기입니다.</p>
+          </div>
+          <div class="review-grid">
+            <div class="review-card">
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p class="review-text">"출장 후 피로가 싹 풀렸습니다. 30분 만에 도착해서 너무 편하게 케어 받았네요!"</p>
+              <span class="review-user">수원 영통구 고객님</span>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p class="review-text">"친절한 상담과 깔끔한 관리가 인상적이었습니다. 다음에도 재이용할 생각입니다."</p>
+              <span class="review-user">성남 분당구 고객님</span>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p class="review-text">"후불제라 안심하고 이용할 수 있었어요. 강력 추천합니다!"</p>
+              <span class="review-user">일산 동구 고객님</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- [B] 구 / 동별 단독 세부 페이지 영역 -->
+    <div id="detailView" style="display: none;">
+      <div class="detail-page-container">
+        <button class="back-btn" onclick="showMainPage()">← 전체 경기지역 목록으로 돌아가기</button>
+        <div id="detailContent"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-info">
+        <h2>제휴문의</h2>
+        <p><strong>0507-1280-3344</strong></p>
+        <p>서비스 품질 향상을 위해 모든 통화는 녹음되고 있습니다.</p>
+        <h3>사업자 정보</h3>
+        <p>상호명: 경기건마몽</p>
+        <p>제휴문의: 0507-1280-3344</p>
+        <p>플랫폼 운영 안내: 경기건마몽은 마사지 업체 및 지역 정보를 제공하는 광고 플랫폼입니다.</p>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 경기건마몽. All rights reserved.</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Floating Call Button -->
+  <a class="floating-call" href="tel:050712803344">제휴문의 0507-1280-3344</a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
