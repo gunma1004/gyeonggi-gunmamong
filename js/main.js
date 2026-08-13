@@ -1,8 +1,8 @@
-// 1. 경기 31개 시·군 및 구/동 상세 데이터
+// 1. 경기 31개 시·군 및 구/동 상세 데이터 (우회 키워드 적용)
 const areaData = [
   { 
     id: "suwon",
-    name: "수원 출장마사지", 
+    name: "수원 방문 홈케어", 
     tag: "영통·인계·매탄·망포·권선·곡반정·화서·정자·원천", 
     img: "images/thumbs/massage-05.jpg",
     gus: [
@@ -14,7 +14,7 @@ const areaData = [
   },
   { 
     id: "seongnam",
-    name: "성남 출장마사지", 
+    name: "성남 방문 홈케어", 
     tag: "분당·정자·서현·야탑·삼평·판교·수내·백현·태평·신흥·상대원", 
     img: "images/thumbs/massage-06.jpg",
     gus: [
@@ -25,7 +25,7 @@ const areaData = [
   },
   { 
     id: "goyang",
-    name: "고양 출장마사지", 
+    name: "고양 방문 홈케어", 
     tag: "일산·화정·장항·백석·주엽·마두·행신·식사·삼송·덕이", 
     img: "images/thumbs/massage-07.jpg",
     gus: [
@@ -36,7 +36,7 @@ const areaData = [
   },
   { 
     id: "yongin",
-    name: "용인 출장마사지", 
+    name: "용인 방문 홈케어", 
     tag: "수지·죽전·풍덕천·성복·동천·기흥·구갈·보라·보정·역북·유방", 
     img: "images/thumbs/massage-08.jpg",
     gus: [
@@ -47,7 +47,7 @@ const areaData = [
   },
   { 
     id: "bucheon",
-    name: "부천 출장마사지", 
+    name: "부천 방문 홈케어", 
     tag: "상동·중동·심곡·원미·소사·범박·괴안·오정·원종·삼정", 
     img: "images/thumbs/massage-09.jpg",
     gus: [
@@ -58,7 +58,7 @@ const areaData = [
   },
   { 
     id: "ansan",
-    name: "안산 출장마사지", 
+    name: "안산 방문 홈케어", 
     tag: "고잔·선부·성포·본오·사동·와동·월피·초지·신길·대부동", 
     img: "images/thumbs/massage-10.jpg",
     gus: [
@@ -68,7 +68,7 @@ const areaData = [
   },
   { 
     id: "anyang",
-    name: "안양 출장마사지", 
+    name: "안양 방문 홈케어", 
     tag: "평촌·안양·관양·비산·호계·박달·석수", 
     img: "images/thumbs/massage-11.jpg",
     gus: [
@@ -78,7 +78,7 @@ const areaData = [
   },
   { 
     id: "namyangju",
-    name: "남양주 출장마사지", 
+    name: "남양주 방문 홈케어", 
     tag: "다산·별내·호평·평내·마석·진접·오남·와부·진건·화도읍", 
     img: "images/thumbs/massage-12.jpg",
     gus: [
@@ -87,7 +87,7 @@ const areaData = [
   },
   { 
     id: "hwaseong",
-    name: "화성 출장마사지", 
+    name: "화성 방문 홈케어", 
     tag: "동탄·병점·향남읍·봉담읍·남양·마도·송산·우정읍·새솔", 
     img: "images/thumbs/massage-13.jpg",
     gus: [
@@ -97,7 +97,7 @@ const areaData = [
   },
   { 
     id: "pyeongtaek",
-    name: "평택 출장마사지", 
+    name: "평택 방문 홈케어", 
     tag: "송탄·서정·비전·세교·동삭·칠원·팽성읍·포승읍·안중읍·고덕", 
     img: "images/thumbs/massage-14.jpg",
     gus: [
@@ -106,7 +106,7 @@ const areaData = [
   },
   { 
     id: "uijeongbu",
-    name: "의정부 출장마사지", 
+    name: "의정부 방문 홈케어", 
     tag: "의정부·호원·신곡·용현·민락·낙양·가능·녹양", 
     img: "images/thumbs/massage-15.jpg",
     gus: [
@@ -115,7 +115,7 @@ const areaData = [
   },
   { 
     id: "siheung",
-    name: "시흥 출장마사지", 
+    name: "시흥 방문 홈케어", 
     tag: "정왕·배곧·은행·대야·신천·목감·장현·능곡·월곶", 
     img: "images/thumbs/massage-16.jpg",
     gus: [
@@ -124,7 +124,7 @@ const areaData = [
   },
   { 
     id: "paju",
-    name: "파주 출장마사지", 
+    name: "파주 방문 홈케어", 
     tag: "금촌·운정·동패·목동·야당·교하·문산읍·조리읍·법원읍", 
     img: "images/thumbs/massage-17.jpg",
     gus: [
@@ -133,7 +133,7 @@ const areaData = [
   },
   { 
     id: "gimpo",
-    name: "김포 출장마사지", 
+    name: "김포 방문 홈케어", 
     tag: "장기·구래·운양·풍무·사우·북변·마산·통진읍·양촌읍", 
     img: "images/thumbs/massage-18.jpg",
     gus: [
@@ -142,7 +142,7 @@ const areaData = [
   },
   { 
     id: "gwangmyeong",
-    name: "광명 출장마사지", 
+    name: "광명 방문 홈케어", 
     tag: "철산·하안·소하·일직·광명·옥길", 
     img: "images/thumbs/massage-19.jpg",
     gus: [
@@ -151,7 +151,7 @@ const areaData = [
   },
   { 
     id: "gwangju",
-    name: "광주 출장마사지", 
+    name: "광주 방문 홈케어", 
     tag: "태전·경안·쌍령·송정·오포읍·곤지암읍·초월읍·퇴촌면", 
     img: "images/thumbs/massage-20.jpg",
     gus: [
@@ -160,7 +160,7 @@ const areaData = [
   },
   { 
     id: "gunpo",
-    name: "군포 출장마사지", 
+    name: "군포 방문 홈케어", 
     tag: "산본·금정·당동·당정·부곡·대야미", 
     img: "images/thumbs/massage-21.jpg",
     gus: [
@@ -169,7 +169,7 @@ const areaData = [
   },
   { 
     id: "icheon",
-    name: "이천 출장마사지", 
+    name: "이천 방문 홈케어", 
     tag: "창전·증포·중리·관고·안흥·부발읍·장호원읍·마장면", 
     img: "images/thumbs/massage-22.jpg",
     gus: [
@@ -178,7 +178,7 @@ const areaData = [
   },
   { 
     id: "yangju",
-    name: "양주 출장마사지", 
+    name: "양주 방문 홈케어", 
     tag: "덕정·옥정·삼숭·고읍·광사·회정·백석읍·광적면", 
     img: "images/thumbs/massage-23.jpg",
     gus: [
@@ -187,7 +187,7 @@ const areaData = [
   },
   { 
     id: "osan",
-    name: "오산 출장마사지", 
+    name: "오산 방문 홈케어", 
     tag: "오산·세교·원동·궐동·수청·금암·양산·외삼미", 
     img: "images/thumbs/massage-24.jpg",
     gus: [
@@ -196,7 +196,7 @@ const areaData = [
   },
   { 
     id: "guri",
-    name: "구리 출장마사지", 
+    name: "구리 방문 홈케어", 
     tag: "인창·수택·토평·교문·아천·갈매", 
     img: "images/thumbs/massage-25.jpg",
     gus: [
@@ -205,7 +205,7 @@ const areaData = [
   },
   { 
     id: "anseong",
-    name: "안성 출장마사지", 
+    name: "안성 방문 홈케어", 
     tag: "봉산·석정·옥산·아양·공도읍·대덕면·죽산면·일죽면", 
     img: "images/thumbs/massage-26.jpg",
     gus: [
@@ -214,7 +214,7 @@ const areaData = [
   },
   { 
     id: "pocheon",
-    name: "포천 출장마사지", 
+    name: "포천 방문 홈케어", 
     tag: "신읍·선단·자작·소흘읍·내촌면·가산면·영북면", 
     img: "images/thumbs/massage-27.jpg",
     gus: [
@@ -223,7 +223,7 @@ const areaData = [
   },
   { 
     id: "uiwang",
-    name: "의왕 출장마사지", 
+    name: "의왕 방문 홈케어", 
     tag: "내손·오전·포일·삼동·왕곡·청계", 
     img: "images/thumbs/massage-28.jpg",
     gus: [
@@ -232,7 +232,7 @@ const areaData = [
   },
   { 
     id: "hanam",
-    name: "하남 출장마사지", 
+    name: "하남 방문 홈케어", 
     tag: "미사·신장·덕풍·풍산·감일·위례·초이", 
     img: "images/thumbs/massage-29.jpg",
     gus: [
@@ -241,7 +241,7 @@ const areaData = [
   },
   { 
     id: "yeoju",
-    name: "여주 출장마사지", 
+    name: "여주 방문 홈케어", 
     tag: "여흥·중앙·광대·점봉·가남읍·흥천면·금사면", 
     img: "images/thumbs/massage-30.jpg",
     gus: [
@@ -250,7 +250,7 @@ const areaData = [
   },
   { 
     id: "yangpyeong",
-    name: "양평군 출장마사지", 
+    name: "양평군 방문 홈케어", 
     tag: "양평읍·양서면·용문면·강상면·강하면·서종면", 
     img: "images/thumbs/massage-31.jpg",
     gus: [
@@ -259,7 +259,7 @@ const areaData = [
   },
   { 
     id: "dongducheon",
-    name: "동두천 출장마사지", 
+    name: "동두천 방문 홈케어", 
     tag: "생연·지행·보산·동두천·상패·광암", 
     img: "images/thumbs/massage-05.jpg",
     gus: [
@@ -268,7 +268,7 @@ const areaData = [
   },
   { 
     id: "gwacheon",
-    name: "과천 출장마사지", 
+    name: "과천 방문 홈케어", 
     tag: "별양·중앙·원문·갈현·문원·주암", 
     img: "images/thumbs/massage-06.jpg",
     gus: [
@@ -277,7 +277,7 @@ const areaData = [
   },
   { 
     id: "gapyeong",
-    name: "가평군 출장마사지", 
+    name: "가평군 방문 홈케어", 
     tag: "가평읍·청평면·설악면·조종면·상면·북면", 
     img: "images/thumbs/massage-07.jpg",
     gus: [
@@ -286,7 +286,7 @@ const areaData = [
   },
   { 
     id: "yeoncheon",
-    name: "연천군 출장마사지", 
+    name: "연천군 방문 홈케어", 
     tag: "연천읍·전곡읍·군남면·신서면·청산면", 
     img: "images/thumbs/massage-08.jpg",
     gus: [
@@ -302,7 +302,7 @@ const shopsData = [
     name: "한국미인홈케어",
     phone: "0507-1280-3294",
     badge: "추천업체",
-    desc: "24시 정성 가득한 타이 & 아로마 전문 케어 (전지역 30분 내 신속 방문)",
+    desc: "24시 정성 가득한 타이 & 아로마 전문 테라피 (전지역 30분 내 신속 방문)",
     img: "images/shop1.jpg",
     courses: [
       { name: "아로디시 관리 (60분)", price: "90,000원" },
@@ -445,36 +445,69 @@ function renderAreas() {
   `).join("");
 }
 
-// 1. 메인 화면 표시 (기본 SEO 타이틀/디스크립션으로 복원)
+// 1. 메인 화면 표시 (기본 SEO 타이틀/디스크립션/OG 태그 복원)
 function showMainPage() {
   document.getElementById("mainView").style.display = "block";
   document.getElementById("detailView").style.display = "none";
 
-  document.title = "경기건마몽 - 경기 31개 시군 구/동별 상세 안내";
-  
+  const mainTitle = "경기건마몽 - 경기 방문 홈케어 31개 시군 구/동별 상세 안내";
+  const mainDesc = "경기건마몽 경기 방문 홈케어 전지역 안내. 수원, 성남, 고양, 용인 등 31개 시군 구/동별 힐링 테라피 추천 제휴업체 정보 및 후불 상담.";
+  const mainImg = "https://gyeonggi-gunmamong.shop/images/logo.png";
+  const mainUrl = "https://gyeonggi-gunmamong.shop/";
+
+  // 🎯 브라우저 타이틀
+  document.title = mainTitle;
+
+  // 🎯 기본 Description 변경
   const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) {
-    metaDesc.setAttribute("content", "경기건마몽 경기 31개 시군, 구 및 동별 출장안내, 추천 제휴업체 정보 및 후불 상담.");
-  }
+  if (metaDesc) metaDesc.setAttribute("content", mainDesc);
+
+  // 🎯 Open Graph 동적 복원
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute("content", mainTitle);
+
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute("content", mainDesc);
+
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage) ogImage.setAttribute("content", mainImg);
+
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.setAttribute("content", mainUrl);
 }
 
-// 2. [시 - 구 - 동] 전용 단독 상세 페이지 표시 (SEO 동적 자동 변경 적용)
+// 2. [시 - 구 - 동] 전용 단독 상세 페이지 표시 (우회 키워드 적용)
 function showDetailPage(area, subName, dongName) {
   document.getElementById("mainView").style.display = "none";
   const detailView = document.getElementById("detailView");
   const detailContent = document.getElementById("detailContent");
 
   let pageTitle = area.name;
-  if (subName) pageTitle = `${area.name.replace('출장마사지','')} ${subName} 출장마사지`;
-  if (dongName) pageTitle = `${area.name.replace('출장마사지','')} ${dongName} 출장마사지`;
+  if (subName) pageTitle = `${area.name.replace('방문 홈케어','')} ${subName} 방문 홈케어`;
+  if (dongName) pageTitle = `${area.name.replace('방문 홈케어','')} ${dongName} 방문 홈케어`;
 
-  // 🎯 [SEO 동적 변경 적용] 페이지에 맞게 브라우저 타이틀 및 메타 디스크립션 설정
-  document.title = `${pageTitle} - 경기건마몽`;
+  const fullTitle = `${pageTitle} - 경기건마몽`;
+  const fullDesc = `${pageTitle} 추천 제휴업체 안내. ${area.name.replace('방문 홈케어','')} 전지역 30분 내 신속 방문, 후불제 케어 서비스.`;
+  const fullImg = area.img.startsWith("http") ? area.img : `https://gyeonggi-gunmamong.shop/${area.img}`;
+
+  // 🎯 [SEO 동적 변경 적용] 타이틀 & 디스크립션 설정
+  document.title = fullTitle;
 
   const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) {
-    metaDesc.setAttribute("content", `${pageTitle} 추천 제휴업체 안내. ${area.name.replace('출장마사지','')} 전지역 30분 내 신속 방문, 후불제 케어 서비스.`);
-  }
+  if (metaDesc) metaDesc.setAttribute("content", fullDesc);
+
+  // 🎯 [Open Graph 동적 변경 적용] OG 태그 재설정
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute("content", fullTitle);
+
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute("content", fullDesc);
+
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage) ogImage.setAttribute("content", fullImg);
+
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.setAttribute("content", window.location.href);
 
   let subNavHtml = "";
   area.gus.forEach(gu => {
@@ -519,7 +552,7 @@ function showDetailPage(area, subName, dongName) {
 
     <!-- 4. 하위 구 및 동 지역 선택 네비게이션 -->
     <div class="detail-section">
-      <h3>📍 ${area.name.replace('출장마사지','')} 세부 구/동 지역 선택</h3>
+      <h3>📍 ${area.name.replace('방문 홈케어','')} 세부 구/동 지역 선택</h3>
       <p style="color:#aaa; font-size:0.9rem; margin-bottom:15px;">원하시는 동을 클릭하시면 해당 동 전용 안내 페이지로 이동합니다.</p>
       ${subNavHtml}
     </div>
