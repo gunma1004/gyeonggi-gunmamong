@@ -411,7 +411,7 @@ function getShopsHtml() {
     return `
       <div class="shop-card">
         <div class="shop-img-box" style="margin: -20px -20px 15px -20px; overflow: hidden; border-radius: 12px 12px 0 0; height: 180px;">
-          <img src="${shop.img}" alt="${shop.name}" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="/${shop.img}" alt="${shop.name}" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="shop-header">
           <span class="shop-badge">${shop.badge}</span>
