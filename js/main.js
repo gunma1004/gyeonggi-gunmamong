@@ -548,13 +548,12 @@ function showMainPage() {
   window.scrollTo(0, 0);
 }
 
-// 2. [시 - 구 - 동] 개별 타이틀 및 메타 디스크립션 동적 적용 함수
+// 2. [시 - 구 - 동] 개별 고유 타이틀 및 메타 디스크립션 동적 적용 함수
 function showDetailPage(area, guName, dongName) {
   document.getElementById("mainView").style.display = "none";
   const detailView = document.getElementById("detailView");
   const detailContent = document.getElementById("detailContent");
 
-  // 지역별 고유 페이지 타이틀 및 설명 조합 생성
   let locationTitle = area.name.replace('홈타이', '').trim();
   let pageTitle = `${area.name} - 경기 방문마사지 & 출장 타이 마사지`;
   let pageDesc = `${area.name} 경기 전지역 홈타이, 방문마사지, 출장 타이 마사지 제휴업체 안내.`;
@@ -572,14 +571,14 @@ function showDetailPage(area, guName, dongName) {
   const fullImg = area.img.startsWith("http") ? area.img : `https://www.gyeonggi-hometai.shop${area.img}`;
   const currentUrl = window.location.href;
 
-  // 🎯 브라우저 및 검색엔진용 고유 타이틀 적용
+  // 브라우저 및 검색엔진용 고유 타이틀 적용
   document.title = pageTitle;
 
-  // 🎯 고유 메타 디스크립션 적용
+  // 고유 메타 디스크립션 적용
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute("content", pageDesc);
 
-  // 🎯 Open Graph(OG) 메타 태그 동적 업데이트 (네이버/카카오 공유 시 깨짐 방지)
+  // Open Graph(OG) 메타 태그 동적 업데이트
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.setAttribute("content", pageTitle);
 
