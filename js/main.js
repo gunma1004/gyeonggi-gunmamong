@@ -363,28 +363,35 @@ const shopsData = [
 document.addEventListener("DOMContentLoaded", () => {
   renderShops();
   renderAreas();
-  checkUrlHash();
+  handleRoute();
 });
 
-// URL 해시(#) 변경에 따른 동적 페이지 전환 및 SEO 변경
-window.addEventListener("hashchange", checkUrlHash);
+// 브라우저 뒤로가기/앞으로가기(팝스테이트) 감지
+window.addEventListener("popstate", () => {
+  handleRoute();
+});
 
-function checkUrlHash() {
-  const rawHash = window.location.hash.replace("#", "");
-  if (!rawHash || rawHash.startsWith("shops") || rawHash.startsWith("service") || rawHash.startsWith("price") || rawHash.startsWith("travel") || rawHash.startsWith("food") || rawHash.startsWith("stay") || rawHash.startsWith("areas") || rawHash.startsWith("reviews")) {
+// URL 경로 기반 페이지 라우팅 분기 처리
+function handleRoute() {
+  const pathSegments = window.location.pathname.replace(/^\/+/, '').split('/');
+  const cityId = pathSegments[0] ? decodeURIComponent(pathSegments[0]) : "";
+  const subName = pathSegments[1] ? decodeURIComponent(pathSegments[1]) : "";
+  const dongName = pathSegments[2] ? decodeURIComponent(pathSegments[2]) : "";
+
+  // 메인 페이지 구성요소 경로 처리
+  const mainSections = ["shops", "service", "price-info", "travel", "food", "areas", "reviews"];
+  if (!cityId || mainSections.includes(cityId)) {
     showMainPage();
+    if (mainSections.includes(cityId)) {
+      const target = document.getElementById(cityId);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
     return;
   }
 
-  const parts = rawHash.split("-");
-  const cityId = parts[0];
-  const targetSub = parts[1] ? decodeURIComponent(parts[1]) : "";
-  const targetDong = parts[2] ? decodeURIComponent(parts[2]) : "";
-
   const foundArea = areaData.find(a => a.id === cityId);
-
   if (foundArea) {
-    showDetailPage(foundArea, targetSub, targetDong);
+    showDetailPage(foundArea, subName, dongName);
   } else {
     showMainPage();
   }
@@ -433,7 +440,7 @@ function renderAreas() {
   if (!container) return;
 
   container.innerHTML = areaData.map(area => `
-    <a class="area-tile" href="#${area.id}">
+    <a class="area-tile" href="/${area.id}" onclick="navigateArea(event, '${area.id}')">
       <div class="tile-img">
         <img alt="${area.name}" height="480" loading="lazy" src="${area.img}" width="480"/>
       </div>
@@ -443,6 +450,27 @@ function renderAreas() {
       </div>
     </a>
   `).join("");
+}
+
+// 지역 타일 클릭 시 페이지 새로고침 없이 History API로 이동
+function navigateArea(event, areaId) {
+  event.preventDefault();
+  history.pushState({ area: areaId }, '', `/${areaId}`);
+  handleRoute();
+}
+
+// 상세 페이지 내 동 버튼 클릭 시 이동
+function navigateDong(event, urlPath) {
+  event.preventDefault();
+  history.pushState({}, '', urlPath);
+  handleRoute();
+}
+
+// 메인으로 돌아가기 버튼 함수
+function goBackToMain(event) {
+  if (event) event.preventDefault();
+  history.pushState({}, '', '/');
+  handleRoute();
 }
 
 // 1. 메인 화면 표시 (브랜드명: 경기홈타이, 메인 키워드 최적화)
@@ -455,14 +483,11 @@ function showMainPage() {
   const mainImg = "https://gyeonggi-hometai.shop/images/logo.png";
   const mainUrl = "https://gyeonggi-hometai.shop/";
 
-  // 🎯 브라우저 타이틀
   document.title = mainTitle;
 
-  // 🎯 기본 Description 변경
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute("content", mainDesc);
 
-  // 🎯 Open Graph 동적 복원
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.setAttribute("content", mainTitle);
 
@@ -474,6 +499,8 @@ function showMainPage() {
 
   const ogUrl = document.querySelector('meta[property="og:url"]');
   if (ogUrl) ogUrl.setAttribute("content", mainUrl);
+  
+  window.scrollTo(0, 0);
 }
 
 // 2. [시 - 구 - 동] 전용 단독 상세 페이지 표시 (SEO 동적 변경)
@@ -490,13 +517,11 @@ function showDetailPage(area, subName, dongName) {
   const fullDesc = `${pageTitle} 추천 제휴업체 안내. ${area.name.replace('홈타이','')} 전지역 30분 내 빠른 방문마사지, 출장 타이 마사지 후불제 케어 서비스.`;
   const fullImg = area.img.startsWith("http") ? area.img : `https://gyeonggi-hometai.shop/${area.img}`;
 
-  // 🎯 [SEO 동적 변경 적용] 타이틀 & 디스크립션 설정
   document.title = fullTitle;
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute("content", fullDesc);
 
-  // 🎯 [Open Graph 동적 변경 적용] OG 태그 재설정
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.setAttribute("content", fullTitle);
 
@@ -515,21 +540,21 @@ function showDetailPage(area, subName, dongName) {
       <div class="gu-box">
         <h4 class="gu-title">${gu.name}</h4>
         <div class="dong-link-grid">
-          ${gu.dongs.map(d => `<a href="#${area.id}-${encodeURIComponent(gu.name)}-${encodeURIComponent(d)}" class="dong-link-btn">${d}</a>`).join("")}
+          ${gu.dongs.map(d => `<a href="/${area.id}/${encodeURIComponent(gu.name)}/${encodeURIComponent(d)}" onclick="navigateDong(event, '/${area.id}/${encodeURIComponent(gu.name)}/${encodeURIComponent(d)}')" class="dong-link-btn">${d}</a>`).join("")}
         </div>
       </div>
     `;
   });
 
   detailContent.innerHTML = `
-    <!-- 1. 구/동 전용 상단 네비게이션 (새 창 열림 target="_blank" 적용) -->
+    <!-- 1. 구/동 전용 상단 네비게이션 -->
     <div class="detail-nav-menu">
-      <a href="#service" target="_blank">서비스</a>
-      <a href="#price-info" target="_blank">가격안내</a>
-      <a href="#travel" target="_blank">근처여행</a>
-      <a href="#food" target="_blank">맛집숙소</a>
-      <a href="#areas" target="_blank">지역안내</a>
-      <a href="#reviews" target="_blank">후기</a>
+      <a href="/#service" onclick="goBackToMain(event)">서비스</a>
+      <a href="/#price-info" onclick="goBackToMain(event)">가격안내</a>
+      <a href="/#travel" onclick="goBackToMain(event)">근처여행</a>
+      <a href="/#food" onclick="goBackToMain(event)">맛집숙소</a>
+      <a href="/#areas" onclick="goBackToMain(event)">지역안내</a>
+      <a href="/#reviews" onclick="goBackToMain(event)">후기</a>
     </div>
 
     <!-- 2. 구/동 전용 히어로 헤더 -->

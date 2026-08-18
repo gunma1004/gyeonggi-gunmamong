@@ -4,22 +4,18 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   
-  <!-- 🎯 메인 타이틀: 1순위 홈타이 / 2순위 방문마사지 / 3순위 순화된 출장 케어 종목 조합 -->
   <title>경기홈타이 - 경기 방문마사지 &amp; 출장 타이 마사지 31개 시군 안내</title>
   <meta content="경기홈타이 경기 전지역 홈타이, 방문마사지, 출장 타이 마사지, 출장 아로마 마사지 안내. 수원, 성남, 고양, 용인 등 31개 시군 구/동별 제휴업체 정보 및 후불 상담." name="description"/>
   
-  <!-- 🎯 Open Graph (SNS 및 검색 로봇 공유용 메타 태그) -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://gyeonggi-hometai.shop/"/>
   <meta property="og:title" content="경기홈타이 - 경기 방문마사지 &amp; 출장 타이 마사지 31개 시군 안내"/>
   <meta property="og:description" content="경기홈타이 경기 전지역 홈타이, 방문마사지, 출장 타이 마사지, 출장 아로마 마사지 안내. 수원, 성남, 고양, 용인 등 31개 시군 구/동별 제휴업체 정보 및 후불 상담."/>
   <meta property="og:image" content="https://gyeonggi-hometai.shop/images/logo.png"/>
 
-  <!-- 🎯 네이버 & 구글 서치콘솔 소유 확인 메타 태그 -->
   <meta name="naver-site-verification" content="d8a97955d0bcefcc65ef570f6f5996860ba1235d" />
   <meta name="google-site-verification" content="pB6wowanpCD2l1ulq8hBHrzRSYObbn6N6JaMWMhfZpc" />
 
-  <!-- 🎯 파비콘(Favicon) 설정 -->
   <link rel="icon" href="images/logo.png" type="image/png"/>
   <link rel="apple-touch-icon" href="images/logo.png"/>
 
@@ -32,17 +28,17 @@
   <div class="page-shell">
     <!-- Header & Navigation -->
     <header class="site-header">
-      <a aria-label="경기홈타이 홈" class="brand" href="#">
+      <a aria-label="경기홈타이 홈" class="brand" href="/">
         <span class="brand-text"><strong>경기홈타이</strong><em>GYEONGGI HOME THAI</em></span>
       </a>
       <nav class="nav-menu">
-        <a href="#shops" onclick="showMainPage()">추천업체</a>
-        <a href="#service" onclick="showMainPage()">서비스</a>
-        <a href="#price-info" onclick="showMainPage()">가격안내</a>
-        <a href="#travel" onclick="showMainPage()">근처여행</a>
-        <a href="#food" onclick="showMainPage()">맛집숙소</a>
-        <a href="#areas" onclick="showMainPage()">지역안내</a>
-        <a href="#reviews" onclick="showMainPage()">후기</a>
+        <a href="/#shops" onclick="navigateSection(event, 'shops')">추천업체</a>
+        <a href="/#service" onclick="navigateSection(event, 'service')">서비스</a>
+        <a href="/#price-info" onclick="navigateSection(event, 'price-info')">가격안내</a>
+        <a href="/#travel" onclick="navigateSection(event, 'travel')">근처여행</a>
+        <a href="/#food" onclick="navigateSection(event, 'food')">맛집숙소</a>
+        <a href="/#areas" onclick="navigateSection(event, 'areas')">지역안내</a>
+        <a href="/#reviews" onclick="navigateSection(event, 'reviews')">후기</a>
       </nav>
     </header>
 
@@ -115,7 +111,7 @@
           </div>
         </section>
 
-        <!-- 4. 근처여행 (경기 근처 대표 명소) -->
+        <!-- 4. 근처여행 -->
         <section class="info-section" id="travel">
           <div class="section-head">
             <span>GYEONGGI TRAVEL GUIDE</span>
@@ -198,7 +194,7 @@
     <!-- [B] 구 / 동별 단독 세부 페이지 영역 -->
     <div id="detailView" style="display: none;">
       <div class="detail-page-container">
-        <button class="back-btn" onclick="showMainPage()">← 전체 경기지역 목록으로 돌아가기</button>
+        <button class="back-btn" onclick="goBackToMain(event)">← 전체 경기지역 목록으로 돌아가기</button>
         <div id="detailContent"></div>
       </div>
     </div>
